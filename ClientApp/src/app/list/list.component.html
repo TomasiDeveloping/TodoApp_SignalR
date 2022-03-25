@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>List: {{ list.name }}</h1>
+  <hr>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Task</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of list.items">
+      <td>
+        <input type="checkbox" [(ngModel)]="item.isCompleted" (change)="toggleToDoItem(item.id)">
+      </td>
+      <td>{{item.text}}</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <input type="text" [(ngModel)]="newItemText">
+        <button (click)="addNewItem()" class="btn btn-primary">addNewItem</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

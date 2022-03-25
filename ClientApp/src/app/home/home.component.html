@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>To Do List</h1>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>List Name</th>
+      <th>Pending</th>
+      <th>Completed</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of lists">
+      <td routerLink="/list/{{item.id}}">{{item.name}}</td>
+      <td>{{item.pending}}</td>
+      <td>{{item.completed }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
